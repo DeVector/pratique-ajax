@@ -13,15 +13,15 @@ $(document).ready(function () {
         const followers = json.followers;
         const following = json.following;
         const repos = json.public_repos;
-        const url = json.url;
+        const url = json.html_url;
 
-        $('#profileName').val(name);
-        $('#profileUsername').val(userName);
-        $('#numbersFollowers').val(followers)
-        $('#numbersFollowing').val(following);
-        $('#numbersRepository').val(repos);
-        $('#url').val(url);
-        $('#profileAvatar').val(avatar);
+        $('#profileName').text(name);
+        $('#profileUsername').text(userName);
+        $('#numbersFollowers').text(followers)
+        $('#numbersFollowing').text(following);
+        $('#numbersRepository').text(repos);
+        $('#url').attr('href', url);
+        $('#profileAvatar').attr('src',avatar);
 
     })
     .catch(function(event) {
